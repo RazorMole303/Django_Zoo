@@ -38,7 +38,7 @@ def bookings(request):
             cbc = Booking.objects.filter(
                 check_in__lt = req_end, check_out__gt = req_start
             ).count()
-            if cbc > 2:
+            if cbc > 100:
                 messages.error(request,"Bookings for this room on this date are full, try again another day")
                 return render(request, 'webpages/bookings.html', {'form': form, 'background_img': 'koala.jpg'})
             book.save()

@@ -7,3 +7,4 @@ class BookingAdmin(admin.ModelAdmin):
     list_filter = ('accommodation_type', 'check_in', 'check_out')
     search_fields = ('full_name', 'email')
     ordering = ('-created_at',)
+    
