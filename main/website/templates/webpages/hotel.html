@@ -1,0 +1,93 @@
+{% extends "webpages/base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container my-5">
+
+  <!-- Hero -->
+  <div class="text-center bg-dark bg-opacity-75 text-white rounded p-5 mb-5">
+    <h1 class="display-4 fw-bold">Sleep Among the Wildlife</h1>
+    <p class="lead">Wake up to the sounds of Riget Zoo.</p>
+    <a href="{% url 'bookings' %}" class="btn btn-success btn-lg">Book Your Stay</a>
+  </div>
+
+  <!-- Introduction -->
+  <div class="row justify-content-center mb-5">
+    <div class="col-lg-8">
+      <div class="card bg-light bg-opacity-75 border border-dark p-4 text-center">
+        <p class="mb-0">
+          Our overnight lodges put you steps from the animals. Enjoy quiet evenings,
+          early-morning wildlife views and a full day at the zoo on your doorstep.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Facilities -->
+  <div class="row g-4 mb-5 text-center">
+    <div class="col-md-4">
+      <div class="card h-100 border border-dark bg-light bg-opacity-75">
+        <div class="card-body">
+          <h5 class="card-title fw-bold">Wildlife Views</h5>
+          <p class="card-text">Watch the enclosures from your own window or deck.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card h-100 border border-dark bg-light bg-opacity-75">
+        <div class="card-body">
+          <h5 class="card-title fw-bold">Breakfast Included</h5>
+          <p class="card-text">Start the day with a hearty meal before the gates open.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card h-100 border border-dark bg-light bg-opacity-75">
+        <div class="card-body">
+          <h5 class="card-title fw-bold">Family Friendly</h5>
+          <p class="card-text">Rooms sleep up to six guests.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Room preview -->
+  <h2 class="text-center text-white mb-4">Our Lodges</h2>
+  <div class="row g-4 mb-5">
+    <div class="col-md-4">
+      <div class="card h-100 shadow border border-dark">
+        <img src="{% static 'images/red_panda.jpg' %}" class="card-img-top" alt="Red Panda Lodge exterior">
+        <div class="card-body bg-light">
+          <h5 class="card-title fw-bold">Red Panda Lodge</h5>
+          <p class="card-text">From £150 / night</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card h-100 shadow border border-dark">
+        <img src="{% static 'images/panda.jpg' %}" class="card-img-top" alt="Panda Sanctuary Suite interior">
+        <div class="card-body bg-light">
+          <h5 class="card-title fw-bold">Panda Sanctuary Suite</h5>
+          <p class="card-text">From £220 / night</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card h-100 shadow border border-dark">
+        <img src="{% static 'images/racoon.jpg' %}" class="card-img-top" alt="Wildlife Safari Cabin exterior">
+        <div class="card-body bg-light">
+          <h5 class="card-title fw-bold">Wildlife Safari Cabin</h5>
+          <p class="card-text">From £180 / night</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Call to action -->
+  <div class="text-center">
+    <a href="{% url 'bookings' %}" class="btn btn-dark btn-lg">See Availability</a>
+  </div>
+
+</div>
+
+{% endblock %}

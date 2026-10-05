@@ -1,0 +1,15 @@
+{% extends 'webpages/base.html' %}
+{% load static %}
+{%block content%}
+    <h1 class="text-center ">Welcome to your next day out!</h1>
+      <div class="container-fluid">
+        <div class="row">
+        <div class="col-4"> 
+            <img class ="w-100 my-3 border border-dark" src="{% static 'images/red_panda.jpg' %}" alt="An image of two red pandas in a tree" class="framed-image"> 
+            <img class ="w-100 my-3 border border-dark" src="{% static 'images/racoon.jpg' %}" alt="An image of two red pandas in a tree" class="framed-image"></div>
+       
+        </div> 
+        </div>
+    </div>
+{% endblock %}
+

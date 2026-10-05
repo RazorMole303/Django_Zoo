@@ -1,0 +1,47 @@
+{% load static %}
+{% load django_bootstrap5 %}
+
+<nav class="navbar navbar-expand-lg bg-primary">
+  <div class="container-fluid px-4">
+    <a class="navbar-brand bg-secondary rounded" href="#"><img src="{% static 'images/Firefly.png' %}"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav d-flex justify-content-around w-100 pt-4 display-4 ">
+        
+        <li class="nav-item ">
+          <a class="nav-link bg-secondary rounded" aria-current="page" href="{%url ''%}">Home</a>
+        </li>
+       
+        <li class="nav-item">
+          <a class="nav-link bg-secondary rounded" href="{%url 'about' %}">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link bg-secondary rounded" href="{%url 'visit' %}">Visits</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link bg-secondary rounded" href="{%url 'hotel'%}">Hotel</a>
+        </li>
+        {% if not user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link bg-secondary rounded" href="{%url 'login'%}">Login</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link bg-secondary rounded" href="{% url 'register' %}">Register</a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link bg-secondary rounded" href="{% url 'logout' %}">Logout</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link bg-secondary rounded" href="{%url 'bookings'%}">Bookings</a>
+        </li>
+        {% endif %}
+
+        
+      </ul>
+    </div>
+  </div>
+</nav>  

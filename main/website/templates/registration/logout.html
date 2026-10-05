@@ -1,0 +1,27 @@
+{% extends "webpages/base.html" %}
+{% block content %}
+
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-5">
+      <div class="card shadow border border-dark bg-light bg-opacity-75 text-center">
+        <div class="card-header bg-dark text-white">
+          <h2 class="mb-0">Log Out</h2>
+        </div>
+        <div class="card-body p-4">
+          <p class="lead">Are you sure you want to log out, {{ user.username }}?</p>
+          <form method="post">
+            {% csrf_token %}
+            <div class="d-grid gap-2">
+              <button class="btn btn-danger btn-lg" type="submit">Yes, log me out</button>
+              <a class="btn btn-outline-dark" href="{% url '' %}">Stay logged in</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+

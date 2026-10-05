@@ -1,0 +1,91 @@
+/* Change these four values to set your two brand colours. */
+:root {
+  --bs-primary: #307000;
+  --bs-primary-rgb: 48, 112, 0;
+  --bs-secondary: #E2B60A;
+  --bs-secondary-rgb: 226, 182, 10;
+}
+
+/* Connect the primary button states to the primary colour. */
+.btn-primary {
+  --bs-btn-bg: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-bg: var(--bs-primary);
+  --bs-btn-hover-border-color: var(--bs-primary);
+  --bs-btn-active-bg: var(--bs-primary);
+  --bs-btn-active-border-color: var(--bs-primary);
+  --bs-btn-disabled-bg: var(--bs-primary);
+  --bs-btn-disabled-border-color: var(--bs-primary);
+  --bs-btn-focus-shadow-rgb: var(--bs-primary-rgb);
+}
+
+/* Connect the secondary button states to the secondary colour. */
+.btn-secondary {
+  --bs-btn-bg: var(--bs-secondary);
+  --bs-btn-border-color: var(--bs-secondary);
+  --bs-btn-hover-bg: var(--bs-secondary);
+  --bs-btn-hover-border-color: var(--bs-secondary);
+  --bs-btn-active-bg: var(--bs-secondary);
+  --bs-btn-active-border-color: var(--bs-secondary);
+  --bs-btn-disabled-bg: var(--bs-secondary);
+  --bs-btn-disabled-border-color: var(--bs-secondary);
+  --bs-btn-focus-shadow-rgb: var(--bs-secondary-rgb);
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+  text-decoration: underline;
+}
+
+body{
+    background-color: black;
+    text-decoration-color: white;
+    background-size: cover;
+}
+
+h1{
+    color: white;
+    text-decoration: underline 5px;
+    font-family: Tokyo;
+   font-size: 100px;
+}
+
+
+@font-face {
+    font-family: Tokyo;
+    src: url('../fonts/ZenTokyoZoo-Regular.ttf');
+}
+
+
+@font-face {
+    font-family: Trunks;
+    src: url('../fonts/THELASTTRUNKS-Personal-Use-Only.ttf');
+}
+
+.navbar{
+    font-family: Trunks;
+    
+}
+
+
+/* Glassmorphism Card for Background Legibility */
+.glass-card {
+    background-color: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(4px);
+}
+
+/* Fixed Room Card Image Sizing */
+.room-card-img {
+    height: 220px;
+    object-fit: cover;
+}
+
+/* White text with shadow for header over background image */
+.hotel-title {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+.hotel-subtitle {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+}
