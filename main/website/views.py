@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required, login_not_required
 from .forms import BookingForm, CreateUserForm
 from .models import Booking
 
+
 class CustomLoginView(SuccessMessageMixin, LoginView):
     template_name = 'registration/login.html'   # adjust to where your login.html lives
     success_message = "Welcome back, %(username)s! You're now logged in."
@@ -34,13 +35,23 @@ def bookings(request):
             book = form.save(commit=False)
             req_start = book.check_in
             req_end = book.check_out
-
+            book.user = request.user
+            
             cbc = Booking.objects.filter(
                 check_in__lt = req_end, check_out__gt = req_start
             ).count()
+
             if cbc > 100:
                 messages.error(request,"Bookings for this room on this date are full, try again another day")
                 return render(request, 'webpages/bookings.html', {'form': form, 'background_img': 'koala.jpg'})
+            days = req_end.day - req_start.day
+            if book.accommodation_type == 'panda_suite':
+                total_price = 220 * days
+            if book.accommodation_type == 'safari_cabin':
+                total_price = 180 * days
+            if book.accommodation_type == 'red_panda':
+                total_price = 150 * days
+            book.price = total_price
             book.save()
             messages.success(request, 'Your booking has been successfully confirmed!')
             return redirect('bookings')
@@ -85,3 +96,8 @@ def hotel(request):
      return render(request, 'webpages/hotel.html', {'background_img': 'panda.jpg'})
 
 
+
+@login_required
+def booking_list(request):
+    hBookings = Booking.objects.filter(user=request.user)
+    return render(request, "webpages/booking_list.html", {"hBookings":hBookings})

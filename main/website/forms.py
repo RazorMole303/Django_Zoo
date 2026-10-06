@@ -9,7 +9,7 @@ from django.contrib.auth import get_user_model
 class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking
-        fields = ['check_in', 'check_out', 'accommodation_type', 'guests', 'full_name', 'email', 'special_requests']
+        fields = ['accommodation_type','check_in', 'check_out', 'accommodation_type', 'guests', 'full_name', 'email', 'special_requests']
         widgets = {
             'check_in': forms.DateInput(attrs={'type': 'date', 'class': 'form-control border-dark', 'id': 'check_in'}),
             'check_out': forms.DateInput(attrs={'type': 'date', 'class': 'form-control border-dark', 'id': 'check_out'}),

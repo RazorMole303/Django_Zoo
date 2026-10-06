@@ -1,0 +1,20 @@
+{% extends "webpages/base.html" %}
+{% block content  %}
+<div class="container py-4">
+<h1>My Bookings</h1>
+<ul class="list-group">
+    {% for booking in hBookings %}
+    <li class="list-group-item">
+        <div>
+            Hotel Booking Booking {{booking.pk}} - {{booking.check_in|date:"j F Y"}}
+        </div>
+        <p class="mb-0">{{booking.check_out}} x £{{ booking.price }}</p>
+    </li>
+    {% empty %}
+    <li class="list-group-item">You have no bookings yet</li>
+</ul>
+{% endfor %}
+</div>
+
+
+{% endblock %}

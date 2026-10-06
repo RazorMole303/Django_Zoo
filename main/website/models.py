@@ -16,7 +16,8 @@ class Booking(models.Model):
     guests = models.PositiveIntegerField(default=2)
     special_requests = models.TextField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
-
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name="booking_list")
+    price = models.DecimalField(max_digits=6, decimal_places=2)    
     def __str__(self):
         return f"{self.full_name} - {self.get_accommodation_type_display()} ({self.check_in})"
 
