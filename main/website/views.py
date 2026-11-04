@@ -14,7 +14,7 @@ class CustomLoginView(SuccessMessageMixin, LoginView):
 
 
 def home(request):
-    return render(request, 'webpages/home.html', {'background_img': 'panda.jpg'})
+    return render(request, 'webpages/home.html', {'background_img': 'panda.jpg'}) 
 
 
 def about(request):
